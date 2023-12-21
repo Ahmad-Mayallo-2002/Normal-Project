@@ -1,0 +1,319 @@
+.tweet {
+    background-image: url(../Images/footer-background-image.png);
+    background-size: cover;
+    background-color: #26264b;
+    overflow: hidden;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .col {
+            width: 25%;
+            color: $whiteColor;
+            transform: translateY(200px);
+            opacity: 0;
+            transition: .5s;
+
+            p {
+                color: #aaa;
+            }
+
+            h4:first-of-type {
+                text-transform: uppercase;
+                margin-bottom: 50px;
+            }
+
+            &:first-of-type {
+                .subscribe {
+                    line-height: 1.7;
+                    margin-bottom: 20px;
+                }
+
+                .section {
+                    display: flex;
+                    gap: 30px;
+                    margin-bottom: 10px;
+
+                    i {
+                        color: $redColor;
+                    }
+
+                    .text {
+                        h5 {
+                            margin-bottom: 10px;
+                            font-size: 1rem;
+                        }
+
+                        p {
+                            line-height: 1.7;
+                        }
+
+                        a {
+                            color: #aaa;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                .section {
+                    display: flex;
+                    gap: 15px;
+                    margin-bottom: 20px;
+
+                    i {
+                        color: #aaa;
+                    }
+
+                    .text {
+                        a {
+                            color: $redColor;
+                            transition: .5s;
+                            font-weight: bold;
+
+                            &:hover {
+                                color: brown;
+                            }
+                        }
+
+                        span {
+                            color: #aaa;
+                        }
+
+                        p {
+                            color: $whiteColor;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+                .section {
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .image {
+                        img {
+                            width: 68px;
+                            height: 68px;
+                            border-radius: 4px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .text {
+                        margin-left: 14px;
+
+                        h6 {
+                            font-size: 1rem;
+                            margin-bottom: 10px;
+                        }
+
+                        .icons {
+                            display: flex;
+                            gap: 15px;
+
+                            i {
+                                color: $redColor;
+                                margin-right: 5px;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:last-of-type {
+                .skills {
+                    margin-bottom: 25px;
+
+                    p {
+                        cursor: pointer;
+                        display: inline-block;
+                        width: fit-content;
+                        padding: 10px 12px;
+                        margin-left: 10px;
+                        margin-top: 10px;
+                        color: rgb(170, 170, 170);
+                        background-color: #363636;
+                        border-radius: 2px;
+                        transition: .5s;
+                        font-weight: bold;
+
+                        &:hover {
+                            background-color: $redColor;
+                            color: $whiteColor;
+                        }
+                    }
+                }
+
+                h4:last-of-type {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+
+                .sign {
+                    line-height: 1.7;
+                    margin-bottom: 20px;
+                }
+
+                form {
+                    position: relative;
+
+                    input {
+                        width: 100%;
+                        background-color: #444;
+                        padding: 15px;
+                        caret-color: $whiteColor;
+                        border-top-right-radius: 20px;
+
+                        &::placeholder {
+                            color: $redColor;
+                        }
+
+                        &:focus {
+                            background-color: transparent;
+                        }
+                    }
+
+                    button {
+                        position: absolute;
+                        background-color: $redColor;
+                        height: 100%;
+                        padding: 0 24px;
+                        cursor: pointer;
+                        border-radius: 0px 20px;
+                        right: 0;
+
+                        &::before {
+                            position: absolute;
+
+                            font: {
+                                family: "Font Awesome 6 Free";
+                                weight: 900;
+                                size: 25px;
+                            }
+
+                            color: $whiteColor;
+                            content: "\f00c";
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+
+                .respect {
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+
+                .socials {
+                    display: flex;
+                    gap: 20px;
+
+                    i {
+                        width: 36px;
+                        height: 36px;
+                        cursor: pointer;
+                        background-color: #444;
+                        color: #ddd;
+                        transition: .5s;
+                        display: flex !important;
+                        @include center;
+                        border-radius: 0 10px;
+
+                        &:hover {
+                            color: $whiteColor;
+                            background-color: $redColor;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    overflow: hidden;
+    padding: 30px;
+    background-color: $redColor;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            color: $whiteColor;
+
+            &:first-of-type {
+                transform: translateX(-300px);
+                opacity: 0;
+                transition: .5s .75s;
+            }
+
+            &:last-of-type {
+                display: flex;
+                gap: 50px;
+                transform: translateX(300px);
+                opacity: 0;
+                transition: .5s 1s;
+
+                a {
+                    color: $whiteColor;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.my-effect {
+    transform: translate(0, 0) !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 991px) {
+    .tweet {
+        .container {
+            .col {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .tweet {
+        .container {
+            .col {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        .container {
+            flex-direction: column;
+            row-gap: 30px;
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+}

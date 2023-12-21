@@ -1,0 +1,20 @@
+// Import Files
+@import "helps";
+@import "header";
+@import "landing";
+@import "choose";
+@import "about";
+@import "products";
+@import "feature";
+@import "price";
+@import "design";
+@import "tweet&footer";
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.ptb-80 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}

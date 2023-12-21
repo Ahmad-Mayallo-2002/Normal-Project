@@ -1,0 +1,159 @@
+// Start Global Rules
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// End Global Rules
+
+// Some Framework Classes and Mixins
+.p-15 {
+    padding: 15px;
+}
+
+.plr-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.position-vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.position-horizontal-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-setting {
+    border: none;
+    outline: none;
+}
+
+@mixin circle($diminssions) {
+    width: $diminssions;
+    height: $diminssions;
+    border-radius: 50%;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Start Media Queries
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 767px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+// End Media Queries
+
+// Start Variables
+
+$redColor: #ee1515;
+$whiteColor: #fff;
+$whiteColorWithHalfOpacity: #ffffff80;
+$secondaryColor: #170936;
+
+// End Variables
+
+.main-button {
+    width: fit-content;
+    display: block;
+    background-color: $redColor;
+    color: $whiteColor;
+    border-radius: 0 200px;
+    padding: 11px 57px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    &::before {
+        top: 0;
+        left: 0;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background-color: rgba(24, 9, 53, 0.77);
+        opacity: 0;
+        transition: opacity .5s,
+            transform .5s;
+        z-index: -1;
+    }
+
+    &:hover {
+        &::before {
+            transform: translateY(-5px);
+            opacity: 1;
+        }
+    }
+}

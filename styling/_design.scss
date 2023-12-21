@@ -1,0 +1,203 @@
+.design {
+    background-image: url(../Images/testimonial-background.png);
+    background-size: cover;
+    background-color: #ee1515;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        .slideing {
+            padding-top: 95px;
+            padding-bottom: 95px;
+            border-bottom: 3px solid $secondaryColor;
+
+            .slider {
+                .slider-track {
+                    transition: transform 1s;
+
+                    .box {
+                        width: 100%;
+                        display: flex;
+                        row-gap: 20px;
+                        flex-direction: column;
+                        align-items: center;
+
+                        img {
+                            border-radius: 50%;
+                            height: 90px;
+                            width: 100px;
+                            object-fit: cover;
+                            transition: .5s;
+                            transform: translateY(50px);
+                            opacity: 0;
+                        }
+
+                        h5 {
+                            color: $secondaryColor;
+                            font-size: 25px;
+                            transition: .5s .2s;
+                            transform: translateY(50px);
+                            opacity: 0;
+                        }
+
+                        small {
+                            transition: .5s .4s;
+                            transform: translateY(50px);
+                            opacity: 0;
+                        }
+
+                        p {
+                            color: $whiteColor;
+                            text-align: center;
+                            line-height: 1.7;
+                            transition: .5s .6s;
+                            transform: translateY(50px);
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .track {
+                display: flex;
+                justify-content: center;
+                column-gap: 15px;
+                transform: translateY(50px);
+                transition: .5s .8s;
+                opacity: 0;
+
+                span {
+                    display: block;
+                    @include circle(25px);
+                    background-color: $secondaryColor;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .image-slider {
+            overflow: hidden;
+            padding-top: 70px;
+            padding-bottom: 70px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: .5s 1s;
+
+            .slider {
+                width: 200%;
+                display: flex;
+
+                figure {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.active {
+    background-color: $whiteColor !important;
+}
+
+.my-effect {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.my-effect-track {
+    transform: translateY(25px) !important;
+    opacity: 1 !important;
+}
+
+.article {
+    margin-top: 50px;
+    margin-bottom: -20px;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: .5s;
+
+    .container {
+        background-color: $redColor;
+        padding-top: 30px;
+        padding-bottom: 90px;
+        position: relative;
+        border-radius: 0 150px;
+        z-index: 1;
+
+        padding: {
+            top: 30px;
+            bottom: 90px;
+            left: 50px;
+            right: 50px;
+        }
+
+        ;
+
+        &::before {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            content: "";
+            background-color: rgba(24, 9, 53, 0.77);
+            transform: translateY(-20px);
+            border-radius: inherit;
+        }
+
+        .text {
+            color: $whiteColor !important;
+
+            h4 {
+                text-transform: uppercase;
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        a.main-button {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .design {
+        .container {
+            .image-slider .slider {
+                width: calc(340% - 50px);
+            }
+        }
+    }
+
+    .article {
+        margin: 0;
+
+        .container {
+            border-radius: 0;
+            flex-direction: column;
+            row-gap: 30px;
+
+            .text {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .design {
+        .container {
+            .image-slider .slider {
+                width: 500%;
+            }
+        }
+    }
+}

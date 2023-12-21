@@ -1,0 +1,125 @@
+.products {
+    overflow: hidden;
+
+    .container {
+        .posts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px 15px;
+
+            .box {
+                display: flex;
+                gap: 15px;
+                width: calc((100% - 15px * 1) / 2);
+                padding-left: 15px;
+                padding-right: 15px;
+                transition: transform .75s;
+
+                &:nth-of-type(odd) {
+                    transform: translateX(-100vw);
+
+                    .text {
+                        align-items: flex-end;
+
+                        h3 {
+                            text-align: right;
+                        }
+                    }
+                }
+
+                &:nth-of-type(even) {
+                    transform: translateX(100vw);
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+
+                    h3 {
+                        color: $secondaryColor;
+                        font-weight: normal;
+                        font-size: 1.75rem;
+                        transition: font-weight .25s;
+
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+
+                    small,
+                    p a {
+                        color: #777;
+                    }
+
+                    a {
+                        transition: .5s;
+
+                        &:hover {
+                            color: $secondaryColor;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    i {
+                        @include circle(35px);
+                        background-color: #eee;
+                        transition: .5s;
+                        display: flex !important;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $whiteColor;
+                            background-color: $redColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        a {
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 0 15px;
+        }
+    }
+}
+
+.my-effect {
+    transform: translateX(0);
+}
+
+@media (max-width: 991px) {
+    .products {
+        .container {
+            .posts {
+                flex-direction: column;
+                align-items: center;
+
+                .box {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .products {
+        .container {
+            .posts {
+                .box {
+                    flex-direction: column;
+
+                    &:nth-of-type(odd) {
+                        align-items: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
